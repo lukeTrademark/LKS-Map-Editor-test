@@ -19,8 +19,8 @@ public class ToolBar extends JPanel
 		JToggleButton PaintToolSelect = null;
 		ImageIcon pressedGrid = null;
 		try {
-			PaintToolSelect = new JToggleButton(new ImageIcon(ClassLoader.getSystemResourceAsStream("Grid1.png").readAllBytes()));
-			pressedGrid = new ImageIcon(ClassLoader.getSystemResourceAsStream("GridPressed1.png").readAllBytes());
+			PaintToolSelect = new JToggleButton(new ImageIcon(ClassLoader.getSystemResourceAsStream("paintbrush_unselected.png").readAllBytes()));
+			pressedGrid = new ImageIcon(ClassLoader.getSystemResourceAsStream("paintbrush_selected.png").readAllBytes());
 			
 		} catch (IOException e) 
 		{
@@ -38,7 +38,7 @@ public class ToolBar extends JPanel
 		PaintToolSelect.setSelectedIcon(pressedGrid);
 		PaintToolSelect.addActionListener(e -> 
 		{
-			GridHandler.TOOLINUSE = GridHandler.SELECTMODE;
+			GridHandler.TOOLINUSE = GridHandler.PAINTMODE;
 		});
         add(PaintToolSelect);
 		
@@ -46,8 +46,8 @@ public class ToolBar extends JPanel
 		JToggleButton SelectToolSelect= null;
 		ImageIcon pressedSelect = null;
 		try {
-			SelectToolSelect = new JToggleButton(new ImageIcon(ClassLoader.getSystemResourceAsStream("Grid1.png").readAllBytes()));
-			pressedSelect = new ImageIcon(ClassLoader.getSystemResourceAsStream("GridPressed1.png").readAllBytes());
+			SelectToolSelect = new JToggleButton(new ImageIcon(ClassLoader.getSystemResourceAsStream("select_unselected.png").readAllBytes()));
+			pressedSelect = new ImageIcon(ClassLoader.getSystemResourceAsStream("select_selected.png").readAllBytes());
 			
 		} catch (IOException e) 
 		{
@@ -64,7 +64,7 @@ public class ToolBar extends JPanel
 		SelectToolSelect.setSelectedIcon(pressedSelect);
 		SelectToolSelect.addActionListener(e -> 
 		{
-			GridHandler.TOOLINUSE = GridHandler.PAINTMODE;
+			GridHandler.TOOLINUSE = GridHandler.SELECTMODE;
 		});
 		add(SelectToolSelect);
 		
